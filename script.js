@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('feedbackForm');
-  const emailInput = document.getElementById('emailUser');
-  const resultadoDiv = document.getElementById('resultadoFinal');
+  const emailInput = document.getElementById('email');
+  const resultadoDiv = document.createElement('div');
+  resultadoDiv.id = 'resultadoFinal';
+  form.parentNode.insertBefore(resultadoDiv, form.nextSibling);
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const gabarito = {
-      'pergunta 1': '1;3;5;7;11;13;17;19;23;29',
-      'pergunta 2': 'não, pois é divisível por 7 e por 13 além de 1 e 91',
-      'pergunta3': ['42'],
-      'pergunta 4': 'y = x<sup>2</sup> + 2x - 4'
+      pergunta1: "280 metros",
+      pergunta2: "30 cm²",
+      pergunta3: "50 metros",
+      pergunta4: "8",
+      pergunta5: "480m; 3840m; R$ 5760"
     };
-
-    const normalizeText = (text) =>
-      text.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     const email = emailInput.value.trim().toLowerCase();
     if (!email || !email.includes('@')) {
@@ -25,24 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let acertos = 0;
     let erros = 0;
 
-    const p1 = document.querySelector('input[name="pergunta 1"]:checked');
-    const p2 = document.querySelector('input[name="pergunta 2"]');
-    const p3Selecionados = Array.from(document.querySelectorAll('input[name="pergunta3"]:checked')).map(el => el.value);
-    const p4 = document.querySelector('input[name="pergunta 4"]:checked');
+    const p1 = document.querySelector('input[name="pergunta1"]:checked');
+    const p2 = document.querySelector('input[name="pergunta2"]:checked');
+    const p3 = document.querySelector('input[name="pergunta3"]:checked');
+    const p4 = document.querySelector('input[name="pergunta4"]:checked');
+    const p5 = document.querySelector('input[name="pergunta5"]:checked');
 
-    if (p1 && p1.value === gabarito['pergunta 1']) acertos++; else erros++;
-    if (p2 && normalizeText(p2.value) === normalizeText(gabarito['pergunta 2'])) acertos++; else erros++;
-    if (
-      p3Selecionados.length === gabarito['pergunta3'].length &&
-      p3Selecionados.every(v => gabarito['pergunta3'].includes(v))
-    ) acertos++; else erros++;
-    if (p4 && p4.value.replace(/\s+/g, '') === gabarito['pergunta 4'].replace(/\s+/g, '')) acertos++; else erros++;
+    if (p1 && p1.value === gabarito.pergunta1) acertos++; else erros++;
+    if (p2 && p2.value === gabarito.pergunta2) acertos++; else erros++;
+    if (p3 && p3.value === gabarito.pergunta3) acertos++; else erros++;
+    if (p4 && p4.value === gabarito.pergunta4) acertos++; else erros++;
+    if (p5 && p5.value === gabarito.pergunta5) acertos++; else erros++;
 
     const resumo = `
-      Pergunta 1: ${p1 ? p1.value : 'sem resposta'}
-      Pergunta 2: ${p2 ? p2.value.trim() : 'sem resposta'}
-      Pergunta 3: ${p3Selecionados.join(', ') || 'sem resposta'}
-      Pergunta 4: ${p4 ? p4.value : 'sem resposta'}
+      Pergunta 1: ${p1 ? p1.value : '280 metros'}
+      Pergunta 2: ${p2 ? p2.value : '30 cm²'}
+      Pergunta 3: ${p3 ? p3.value : '50 metros'}
+      Pergunta 4: ${p4 ? p4.value : '8'}
+      Pergunta 5: ${p5 ? p5.value : '480m; 3840m; R$ 5760'}
     `;
 
     // Atualiza campos ocultos
@@ -60,8 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     banco[email] = resultado;
     localStorage.setItem('quizResultados', JSON.stringify(banco));
 
-    // Exibe mensagem na tela
+    // Exibe resultado na tela
     resultadoDiv.innerHTML = `
+      <hr>
       <p><strong>Resultado para ${email}</strong></p>
       <p>Acertos: ${acertos}</p>
       <p>Erros: ${erros}</p>

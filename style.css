@@ -1,52 +1,88 @@
-/* RESET BÁSICO - remove margens e espaçamentos padrão dos navegadores */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ESTILO GERAL DO CORPO DA PÁGINA */
+/* ESTILO DO CORPO COM FUNDO ANIMADO */
 body {
-  font-family: Arial, sans-serif; /* Define a fonte */
-  line-height: 1.6; /* Espaçamento entre linhas */
-  background: #79797908; /* Cor de fundo clara */
-  color: #333; /* Cor do texto */
-  padding: 20px; /* Espaçamento interno */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(-45deg, rgba(0, 64, 128, 0.6), rgba(0, 102, 204, 0.6), rgba(0, 191, 255, 0.6), rgba(0, 47, 95, 0.6)),
+    url('https://www.transparenttextures.com/patterns/symphony.png');
+  background-size: 400% 400%, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  animation: animacaoFundo 15s ease infinite;
+}
+
+/* Animação do fundo */
+@keyframes animacaoFundo {
+  0% { background-position: 0% 50%, center; }
+  50% { background-position: 100% 50%, center; }
+  100% { background-position: 0% 50%, center; }
+}
+
+/* Brilhos animados sobre o fundo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.5) 0%, transparent 70%),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.4) 0%, transparent 70%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  animation: flashes 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes flashes {
+  0%, 100% { background-size: 0 0, 0 0, 0 0; }
+  50% { background-size: 180px 180px, 130px 130px, 150px 150px; }
 }
 
 /* CABEÇALHO */
 header {
-  background: #004080; /* Cor azul escuro */
-  color: white; /* Texto branco */
+  background: #004080;
+  color: white;
   padding: 20px;
-  text-align: center; /* Centraliza o conteúdo */
-  border-radius: 8px; /* Cantos arredondados */
-  margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 header h1 {
-  font-size: 2em; /* Tamanho maior do título */
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
 /* CONTEÚDO PRINCIPAL */
 main {
-  max-width: 900px; /* Largura máxima */
-  margin: auto; /* Centraliza horizontalmente */
-  background: white; /* Fundo branco */
+  max-width: 900px;
+  margin: auto;
+  background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra leve ao redor */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* SEÇÕES DO CONTEÚDO */
+/* SEÇÕES */
 section {
-  margin-bottom: 30px; /* Espaço entre seções */
+  margin-bottom: 30px;
 }
 
 section h2 {
   margin-bottom: 10px;
-  color: #004080; /* Azul escuro */
+  color: #004080;
 }
 
 /* FORMULÁRIOS */
@@ -55,17 +91,15 @@ form {
   margin-bottom: 10px;
 }
 
-/* Estilo para opções de rádio e checkbox */
 input[type="radio"],
 input[type="checkbox"] {
   margin-right: 8px;
 }
 
-/* CAMPOS DE TEXTO E EMAIL */
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%; /* Ocupa toda a largura disponível */
+  width: 100%;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -81,21 +115,20 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease; /* Animação suave ao passar o mouse */
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #002f5f; /* Tom mais escuro ao passar o mouse */
+  background: #002f5f;
 }
 
-/* TABELA DE PONTUAÇÃO */
+/* TABELA */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-/* CÉLULAS DA TABELA */
 table th,
 table td {
   border: 1px solid #ccc;
@@ -103,23 +136,21 @@ table td {
   text-align: left;
 }
 
-/* CABEÇALHO DA TABELA */
 table th {
   background: #004080;
   color: white;
 }
 
-/* DETALHES COM "VER RESPOSTAS" */
+/* DETALHES E LISTA DE RESPOSTAS */
 details summary {
   cursor: pointer;
   font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
   color: #004080;
 }
 
 ol {
-  padding-left: 20px; /* Recuo da lista */
+  padding-left: 20px;
 }
 
 /* FORMULÁRIO DE FEEDBACK */
@@ -140,7 +171,7 @@ footer {
   margin-top: 40px;
   padding: 20px;
   font-size: 0.9em;
-  color: #777;
+  color: #0e0000ef;
 }
 
 footer a {

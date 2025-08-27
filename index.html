@@ -20,12 +20,6 @@
 
         <form id="quizForm" action="https://formspree.io/f/xeokdqyp" method="POST"></form>
 
-  <main>
-    <section>
-      <h2>Sobre esse quiz</h2>
-      <p>Este quiz foi desenvolvido para testar seus conhecimentos sobre matemática. Você precisará escolher as respostas corretas de acordo com o enunciado e, ao final, nos dar um feedback.</p>
-    </section>
-
   <!-- Pergunta 1 -->
   <section>
     <h2>Pergunta 1: Um terreno retangular será dividido ao meio, pela sua diagonal,formando dois triângulos retângulos. A metade desse terreno será cercada com 4 fios de arame farpado. Sabendo que as dimensões desse terreno são de 20 metros de largura e 21 metros de comprimento, qual será a metragem mínima gasta de arame?</h2>
@@ -143,32 +137,7 @@
     
   </section>
 
-  <!-- Tabela de Pontuação -->
-  <section>
-    <h2>Tabela de Pontuação</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Pontuação</th>
-          <th>Avaliação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>0-2</td>
-          <td>Não desista! Cada tentativa é uma oportunidade de você aprender</td>
-        </tr>
-        <tr>
-          <td>3-6</td>
-          <td>Parabéns! você foi bem mas pode melhorar</td>
-        </tr>
-        <tr>
-          <td>7-10</td>
-          <td>Parabéns! você é incrível</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+
 
   <!-- Formulário de Feedback -->
   
@@ -217,7 +186,7 @@
       let erros = 0;
       let resumo = '';
 
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 5; i++) {
         const nome = `pergunta${i}`;
         const resposta = form.querySelector(`input[name="${nome}"]:checked`);
         const valor = resposta ? resposta.value : 'sem resposta';

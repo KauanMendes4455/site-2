@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz matemática básica</title>
-  <meta name="description" content="Um quiz interativo para testar seus conhecimentos em matemática.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Razões Trigonométricas CEAK</title>
+  <meta name="description" content="um quiz interativo para testar seus conhecimentos em matemática" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>Razões Trigonométricas CEAK</h1>
+    <p>Teste seus conhecimentos com 10 questões sobre matemática.</p>
+  </header>
 
-<header>
-  <h1>Quiz para alunos de matemática CEAK</h1>
-  <p>Teste seus conhecimentos em teorema de pitágoras e veja qual pontuação você consegue fazer!</p>
-</header>
+  <main>
+    <section>
+      <h2>Sobre esse quiz</h2>
+      <p>Este quiz foi desenvolvido para testar seus conhecimentos em conceitos básicos da matemática.</p>
+    </section>
 
-<main>
+      <form id="feedbackForm" action="https://formspree.io/f/xeokdqyp" method="POST">
 
-  <section>
-    <h2>Sobre esse quiz</h2>
-    <p>Este quiz foi desenvolvido para testar seus conhecimentos em teorema de pitágoras, e é composto por uma série de perguntas para te testar.</p>
-  </section>
+  <main>
+    <section>
+      <h2>Sobre esse quiz</h2>
+      <p>Este quiz foi desenvolvido para testar seus conhecimentos sobre matemática. Você precisará escolher as respostas corretas de acordo com o enunciado e, ao final, nos dar um feedback.</p>
+    </section>
 
   <!-- Pergunta 1 -->
   <section>
     <h2>Pergunta 1: Um terreno retangular será dividido ao meio, pela sua diagonal,formando dois triângulos retângulos. A metade desse terreno será cercada com 4 fios de arame farpado. Sabendo que as dimensões desse terreno são de 20 metros de largura e 21 metros de comprimento, qual será a metragem mínima gasta de arame?</h2>
-    <form>
+    
       <input type="radio" value="300 metros" id="p1a" name="pergunta1">
       <label for="p1a">300 metros</label><br>
 
@@ -38,28 +44,29 @@
 
       <input type="radio" value="29 metros" id="p1e" name="pergunta1">
       <label for="p1e">29 metros</label><br>
-    </form>
+    
   </section>
 
   <!-- Pergunta 2 -->
   <section>
     <h2>Pergunta 2: A área do triângulo retângulo que possui base medindo 5 cm e hipotenusa medindo 13 cm é igual a:</h2>
-    <form>
-      <input type="checkbox" id="p2a" name="pergunta2" value="30 cm²">
+    
+      
+      <input type="radio" value="30 cm² " id="p2a" name="pergunta2">
       <label for="p2a">30 cm²</label><br>
 
-      <input type="checkbox" id="p2b" name="pergunta2" value="60 cm²">
+      <input type="radio" value="60 cm²" id="p2b" name="pergunta2">
       <label for="p2b">60 cm²</label><br>
 
-      <input type="checkbox" id="p2c" name="pergunta2" value="24 cm²">
+      <input type="radio" value="24 cm²" id="p2c" name="pergunta2">
       <label for="p2c">24 cm²</label><br>
 
-      <input type="checkbox" id="p2d" name="pergunta2" value="16 cm²">
+      <input type="radio" value="16 cm²" id="p2d" name="pergunta2">
       <label for="p2d">16 cm²</label><br>
 
-      <input type="checkbox" id="p2e" name="pergunta2" value="12 cm²">
+      <input type="radio" value="12 cm²" id="p2e" name="pergunta2">
       <label for="p2e">12 cm²</label><br>
-    </form>
+    
   </section>
 
   <!-- Pergunta 3 -->
@@ -67,7 +74,7 @@
     <h2>Pergunta 3: Uma represa no formato retangular possui dimensões de 
       30 metros por 40 metros. Qual será a distância percorrida por uma pessoa 
       que atravessa essa represa pela sua diagonal?</h2>
-    <form>
+    
       <input type="checkbox" id="p3a" name="pergunta3" value="45 metros">
       <label for="p3a">45 metros</label><br>
 
@@ -82,7 +89,7 @@
 
       <input type="checkbox" id="p3e" name="pergunta3" value="80 metros">
       <label for="p3e">80 metros</label><br>
-    </form>
+    
   </section>
 
   <!-- Pergunta 4 -->
@@ -92,7 +99,7 @@
        do triângulo retângulo. Sabendo que a hipotenusa de um determinado 
        triângulo mede 10 cm e o cateto oposto mede 6 cm, assinale a 
        alternativa que contém a medida do cateto adjacente:</h2>
-    <form>
+    
       <input type="radio" value="7" id="p4a" name="pergunta4">
       <label for="p4a">7</label><br>
 
@@ -107,7 +114,7 @@
 
       <input type="radio" value="11" id="p4e" name="pergunta4">
       <label for="p4e">11</label><br>
-    </form>
+    
   </section>
 
   <!-- Pergunta 5 -->
@@ -118,7 +125,7 @@
         do fio de arame custa R$ 1,50. Diante das informações apresentadas, calcule o perímetro total 
         do terreno utilizando o teorema de Pitágoras, a quantidade de metros de arames a ser utilizado 
         e o valor do custo com a aquisição dos fios de arame.</h2>
-    <form>
+    
       <input type="radio" value="280m; 2240m; R$ 3360" id="p5a" name="pergunta5">
       <label for="p5a">Perímetro total de 280 metros; 2.240 metros de fios; custo de R$ 3.360.</label><br>
 
@@ -133,7 +140,7 @@
 
       <input type="radio" value="400m; 3200m; R$ 4800" id="p5e" name="pergunta5">
       <label for="p5e">Perímetro total de 400 metros; 3.200 metros de fios; custo de R$ 4.800.</label><br>
-    </form>
+    
   </section>
 
   <!-- Tabela de Pontuação -->
@@ -164,39 +171,74 @@
   </section>
 
   <!-- Formulário de Feedback -->
-  <section>
-    <h2>Nos dê o seu feedback</h2>
-    <fieldset>
-      <legend>Informações de contato</legend>
-      <form id="feedbackForm" action="https://formspree.io/f/xeokdqyp" method="POST">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br>
+  
+<h2>Nos dê o seu feedback</h2>
+        <fieldset>
+          <legend>Informações de contato</legend>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+          <label for="name">Nome:</label><br>
+          <input type="text" id="name" name="nome" required /><br>
 
-        <label for="comentario">Comentário:</label><br>
-        <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Digite seus comentários aqui" required></textarea><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="_replyto" required /><br>
 
-        <!-- Campos ocultos para acertos/erros, se desejar integrar com JS -->
-        <input type="hidden" id="campoAcertos" name="Acertos">
-        <input type="hidden" id="campoErros" name="Erros">
-        <input type="hidden" id="campoResumo" name="Resumo_das_respostas">
+          <label for="comentario">Comentário:</label><br>
+          <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Digite seus comentários aqui" required></textarea><br>
 
-        <button type="submit">Enviar respostas e feedback</button>
-      </form>
-    </fieldset>
-  </section>
+          <!-- Campos ocultos preenchidos via JS -->
+          <input type="hidden" id="campoAcertos" name="Acertos" />
+          <input type="hidden" id="campoErros" name="Erros" />
+          <input type="hidden" id="campoResumo" name="Resumo_das_respostas" />
 
-</main>
+          <button type="button" onclick="processarEEnviar()">Enviar respostas e feedback</button>
+        </fieldset>
+      </section>
+    </form>
+  </main>
 
-<footer>
-  <p>Quiz de matemática. Todos os direitos reservados.</p>
-  <p>Para conhecer outros quizzes <a href="https://google.com" target="_blank">clique aqui</a>.</p>
-</footer>
+  <footer>
+    <p>Quiz de matemática. Todos os direitos reservados.</p>
+    <p>Para conhecer outros quizzes <a href="https://flgferas.github.io/sitenovoleo/" target="_blank" rel="noopener noreferrer">clique aqui.</a></p>
+  </footer>
 
-<!-- Opcional: você pode incluir o script.js se quiser lógica JS -->
-<!-- <script src="script.js"></script> -->
+  <script>
+    function processarEEnviar() {
+      const form = document.getElementById('quizForm');
 
+      const gabarito = {
+      pergunta1: "280 metros",
+      pergunta2: "30 cm²",
+      pergunta3: "50 metros",
+      pergunta4: "8",
+      pergunta5: "480m; 3840m; R$ 5760",
+      };
+
+      let acertos = 0;
+      let erros = 0;
+      let resumo = '';
+
+      for (let i = 1; i <= 10; i++) {
+        const nome = `pergunta${i}`;
+        const resposta = form.querySelector(`input[name="${nome}"]:checked`);
+        const valor = resposta ? resposta.value : 'sem resposta';
+
+        resumo += `Pergunta ${i}: ${valor}\n`;
+
+        if (valor === gabarito[nome]) {
+          acertos++;
+        } else {
+          erros++;
+        }
+      }
+
+      document.getElementById('campoAcertos').value = acertos;
+      document.getElementById('campoErros').value = erros;
+      document.getElementById('campoResumo').value = resumo.trim();
+
+      alert(`Você acertou ${acertos} de 5 perguntas.`);
+
+      form.submit();
+    }
+  </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Objeto com as respostas corretas (gabarito) do quiz
   // Cada chave representa o "name" do input da pergunta
   const gabarito = {
-      'pergunta1': '280 metros', // Resposta correta para a pergunta 1
+    'pergunta1': '280 metros', // Resposta correta para a pergunta 1
     'pergunta2': '30 cm²', // Resposta correta para a pergunta 2
     'pergunta3': '50 metros', // Resposta correta para a pergunta 3
     'pergunta4': '8', // Resposta correta para a pergunta 4
